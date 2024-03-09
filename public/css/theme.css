@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+html, body {
+    background: linear-gradient(to bottom, #3498db, #8e44ad);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.bg-light {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-family: 'Courgette', cursive;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #000000;
+}
+
+.nav-link:hover {
+    color: #000000;
+    font-weight: bold;
+}
+
+tr:nth-child(odd) td {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courgette', cursive;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
+}
+
+legend {
+    padding: 10px 0;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    background-color: #27ae60;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+table:nth-of-type(1) {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+table:nth-of-type(1) caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+table:nth-of-type(1) th {
+    background-color: #f0f0f0;
+    padding: 8px;
+}
+
+table:nth-of-type(1) tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table:nth-of-type(1) tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table:nth-of-type(1) td {
+    padding: 8px;
+}
+
+table:nth-of-type(1), table:nth-of-type(1) th, table:nth-of-type(1) td {
+    border: 1px solid #ccc;
+}
+
+section {
+    margin: 20px;
+}
+
+h2 {
+    color: #000000;
+    font-size: 24px;
+}
+
+ol {
+    margin-bottom: 20px;
+}
+
+ol > li {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+ul > li {
+    color: #000000;
+}
+
+p {
+    color: #000000;
+}
