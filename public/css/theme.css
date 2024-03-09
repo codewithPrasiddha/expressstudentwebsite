@@ -63,35 +63,33 @@ legend {
     background-color: #2980b9;
 }
 
-table:nth-of-type(1) {
+/* Table styling */
+table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 20px;
 }
 
-table:nth-of-type(1) caption {
+table caption {
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-table:nth-of-type(1) th {
+table th {
     background-color: #f0f0f0;
     padding: 8px;
 }
 
-table:nth-of-type(1) tr:nth-child(even) {
+table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-table:nth-of-type(1) tr:nth-child(odd) {
+table tr:nth-child(odd) {
     background-color: #ffffff;
 }
 
-table:nth-of-type(1) td {
+table td {
     padding: 8px;
-}
-
-table:nth-of-type(1), table:nth-of-type(1) th, table:nth-of-type(1) td {
     border: 1px solid #ccc;
 }
 

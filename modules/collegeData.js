@@ -117,29 +117,19 @@ module.exports.getStudentsByCourse = function (course) {
 };
 
 
-module.exports.addStudent = function(studentData) {
+module.exports.addStudent = function(studentData){
     return new Promise((resolve, reject) => {
-
-        if (!studentData) {
-            reject("Student data is undefined");
-            return;
-        }
-
-
         if (studentData.TA === undefined) {
-            studentData.TA = false;
+          studentData.TA = false;
         } else {
-            studentData.TA = true;
+          studentData.TA = true;
         }
-
-
+    
         studentData.studentNum = dataCollection.students.length + 1;
-
-
+    
         dataCollection.students.push(studentData);
-
-
+    
         resolve();
-    });
+     });
 }
 
