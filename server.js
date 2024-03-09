@@ -1,10 +1,12 @@
 /*********************************************************************************
-*  WEB700 – Assignment 03
+*  WEB700 – Assignment 04
 *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 17th Feb, 2024
+*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 9th March, 2024
+*
+*  Online (Cycliic) Link: ________________________________________________________
 *
 ********************************************************************************/ 
 
@@ -36,6 +38,23 @@ app.get("/about", (req, res) => {
 app.get("/htmlDemo", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/htmlDemo.html"));
 });
+
+
+app.get("/students/add", (req,res) => {
+    res.sendFile(path.join(__dirname, "/views/addStudent.html"));
+});
+
+app.post("/students/add", (req, res)=>{
+    // console.log(req.body);
+    data.addStudent(req.body)
+    .then(() => {
+        res.redirect('/students');
+    })
+    .catch(error => {
+        res.status(500).send('Error adding student: ' + error.message);
+    });
+});
+
 
 //Routing to get all students or students by course
 app.get("/students", (req, res) => {

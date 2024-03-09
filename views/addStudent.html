@@ -2,77 +2,160 @@
 <html>
 
 <head>
-    <title>WEB700</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>WEB700</title>
+	<meta charset="UTF-8" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/theme.css">
+
+
 </head>
-<link rel="stylesheet" type="text/css" href="css/theme.css">
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Prasiddha Thapaliya</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
-                <li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
-                <li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
-            </ul>
-        </div>
-    </nav>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="#">Prasiddha Thapaliya</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-    <div class="container">
-        <div class="row">
-            <main class="col-md-12">
-                <!-- Start your code here -->
-                <h1>Welcome to About Page</h1>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/students/add">Add Student</a></li>
+				</ul>
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-                <h2>About Me</h2>
-                <p>
-                    My name is Prasiddha Thapaliya. I am a student enrolled in the BTT program at Seneca College.
-                    My student email is "pthapaliya@myseneca.ca". This website is created as part of the WEB700 course.
-                </p>
+	<br />
 
-                <p>
-                    This site consists of 3 static views (Home, About, HTML Demo) as well as 5 routes that supply data,
-                    including: All Students, Students by Course, A Single Student By Student Number, All Managers, and
-                    All Courses. Below are the links to the 8 pages:
-                </p>
+    <div style="height:200;background-color: red; ">
 
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/htmlDemo">HTML Demo</a></li>
-                    <li><a href="/students">All Students</a></li>
-                    <li><a href="/students?course=3">Students by Course</a></li>
-                    <li><a href="/student/2">A Single Student By Student Number</a></li>
-                    <li><a href="/tas">All Managers</a></li>
-                    <li><a href="/courses">All Courses</a></li>
-                </ul>
-                <!-- End your code here -->
-
-            </main>
-        </div>
     </div>
+	<div class="container">
+		<div class="row">
+			<main class="col-md-12">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+				<form method="POST" action="/students/add">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">First Name:</label>
+                                    <input type="text" class="form-control" name="firstName"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Last Name:</label>
+                                    <input type="text" class="form-control" name="lastName"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Email:</label>
+                                    <input type="email" class="form-control" name="email"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Address (Street):</label>
+                                    <input type="text" class="form-control" name="addressStreet"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Address (City):</label>
+                                    <input type="text" class="form-control" name="addressCity"/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Address (Province):</label>
+                                    <input type="text" class="form-control" name="addressProvince"/>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Academic Information</legend>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="mb-2">College Employment:</label>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="TA">
+                                    <label class="form-check-label" for="TA">Teaching Assistant</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Enrollment Status:</label><br>
+                                    <div class="form-check form-check-inline">
+                                        <input name="status" type="radio" class="form-check-input" id="fullTime" value="Full Time">
+                                        <label class="form-check-label" for="fullTime">Full Time</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input name="status" type="radio" class="form-check-input" id="partTime" value="Part Time">
+                                        <label class="form-check-label" for="partTime">Part Time</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label" >Enrolled in Course:</label>
+                                    <select class="form-select" name="course">
+                                        <option value="1">Relational Database Design and Implementation</option>
+                                        <option value="2">Java Programming</option>
+                                        <option value="3">Introduction to Cloud Computing</option>
+                                        <option value="4">Database Administration and Management</option>
+                                        <option value="5">Web Programming</option>
+                                        <option value="6">Applied Capstone Project</option>
+                                        <option value="7">Database Connectivity Using Java</option>
+                                        <option value="8">Accessing Big Data</option>
+                                        <option value="9">Datawarehousing</option>
+                                        <option value="10">Security in Databases and Web Applications</option>
+                                        <option value="11">Work Term Preparation (Work-Integrated Learning option only)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                
+                    <hr>
+                
+                    <input type="submit" class="btn btn-primary float-end" value="Add Student" /><br><br><br>
+                </form>
+
+
+
+				<!-- End your code here  -->
+
+			</main>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
