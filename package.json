@@ -8,14 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codewithPrasiddha/webserverrequests.git"
+    "url": "git+https://github.com/codewithPrasiddha/routesandCSS.git"
+    
   },
   "author": "Prasiddha Thapaliya",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/codewithPrasiddha/webserverrequests/issues"
+    "url": "https://github.com/codewithPrasiddha/routesandCSS.git/issues"
   },
-  "homepage": "https://github.com/codewithPrasiddha/webserverrequests#readme",
+  "homepage": "https://github.com/codewithPrasiddha/routesandCSS.git#readme",
   "dependencies": {
     "express": "^4.18.2"
   }

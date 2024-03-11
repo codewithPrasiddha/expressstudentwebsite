@@ -21,6 +21,7 @@ const app = express();
 //Defining the port number
 const HTTP_PORT = process.env.PORT || 8080;
 
+app.use (express.urlencoded({ extended: true }) );
 //Serving static files from the "public" directory
 app.use(express.static("public"));
 
