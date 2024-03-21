@@ -52,24 +52,26 @@ app.use (express.urlencoded({ extended: true }) );
 //Serving static files from the "public" directory
 app.use(express.static("public"));
 
-//Routing for the home page
-app.get('/', (req, res) => {
+app.use(function(req,res,next){
+    let route = req.path.substring(1);
+    app.locals.activeRoute = "/" + (isNaN(route.split('/')[1]) ? route.replace(/\/(?!.*)/, "") : route.replace(/\/(.*)/, ""));
+    next();
+   });
+
+app.get("/", (req,res) => {
     res.render('home');
 });
 
-//Routing for the about page
-app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/about.html"));
+app.get("/about", (req,res) => {
+    res.render('about');
 });
 
-//Routing for the HTML demo page
-app.get("/htmlDemo", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/htmlDemo.html"));
+app.get("/htmlDemo", (req,res) => {
+    res.render('htmlDemo');
 });
-
 
 app.get("/students/add", (req,res) => {
-    res.sendFile(path.join(__dirname, "/views/addStudent.html"));
+    res.render('addStudent');
 });
 
 app.post("/students/add", (req, res)=>{
