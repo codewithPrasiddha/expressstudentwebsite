@@ -1,5 +1,5 @@
 /*********************************************************************************
-*  WEB700 – Assignment 04
+*  WEB700 – Assignment 05
 *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
@@ -9,14 +9,41 @@
 *  Online (Cycliic) Link: https://zany-puce-chicken-wig.cyclic.app/
 *
 ********************************************************************************/ 
-
 const express = require("express");
+
+const exphbs = require('express-handlebars'); 
+
 const path = require("path");
 
 //Importing the module for college data
 const data = require("./modules/collegeData.js");
 
 const app = express();
+
+app.engine('.hbs', exphbs.engine({ 
+    extname: '.hbs' ,
+    helpers:
+    {
+navLink: function(url, options){
+    return `<li class="nav-item">
+    <a class="nav-link ${url == app.locals.activeRoute ? "active" : "" }"
+    href="${url}">${options.fn(this)}</a>
+    </li>`;
+   },
+
+   equal: function (lvalue, rvalue, options) {
+    if (arguments.length < 3)
+    throw new Error("Handlebars Helper equal needs 2 parameters");
+    if (lvalue != rvalue) {
+    return options.inverse(this);
+    } else {
+    return options.fn(this);
+    }
+   }}}));
+
+app.set('view engine', 'hbs');
+
+app.set('views', './views'); 
 
 //Defining the port number
 const HTTP_PORT = process.env.PORT || 8080;
@@ -26,8 +53,8 @@ app.use (express.urlencoded({ extended: true }) );
 app.use(express.static("public"));
 
 //Routing for the home page
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/home.html"));
+app.get('/', (req, res) => {
+    res.render('home');
 });
 
 //Routing for the about page
