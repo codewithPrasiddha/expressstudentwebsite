@@ -44,25 +44,6 @@ module.exports.getAllStudents = function () {
     });
 }
 
-//Retrieving teaching assistants
-module.exports.getTAs = function () {
-    return new Promise(function (resolve, reject) {
-        var filteredStudents = [];
-
-        for (let i = 0; i < dataCollection.students.length; i++) {
-            if (dataCollection.students[i].TA == true) {
-                filteredStudents.push(dataCollection.students[i]);
-            }
-        }
-
-        if (filteredStudents.length == 0) {
-            reject("query returned 0 results");
-            return;
-        }
-
-        resolve(filteredStudents);
-    });
-};
 
 //Retrieving all courses
 module.exports.getCourses = function () {

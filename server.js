@@ -4,7 +4,7 @@
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 9th March, 2024
+*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 20th March, 2024
 *
 *  Online (Cycliic) Link: https://zany-puce-chicken-wig.cyclic.app/
 *
@@ -117,14 +117,6 @@ app.get("/student/:studentNum", (req, res) => {
         })
         .catch((err) => {
             res.json({ message: "no results" });
-        });
-});
-
-//Routing to get teaching assistants
-app.get("/tas", (req, res) => {
-    data.getTAs()
-        .then((data) => {
-            res.json(data);
         });
 });
 
