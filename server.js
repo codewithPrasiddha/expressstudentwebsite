@@ -52,6 +52,7 @@ app.use (express.urlencoded({ extended: true }) );
 //Serving static files from the "public" directory
 app.use(express.static("public"));
 
+//Navigation Bar to Show the correct "active" item
 app.use(function(req,res,next){
     let route = req.path.substring(1);
     app.locals.activeRoute = "/" + (isNaN(route.split('/')[1]) ? route.replace(/\/(?!.*)/, "") : route.replace(/\/(.*)/, ""));
