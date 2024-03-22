@@ -90,23 +90,25 @@ app.post("/students/add", (req, res)=>{
 //Routing to get all students or students by course
 app.get("/students", (req, res) => {
     if (req.query.course) {
-        // Getting students by course
-        data.getStudentsByCourse(req.query.course)
-            .then((data) => {
-                res.json(data);
+        data.getStudentsByCourse(req.query.course).then((data) => {
+            res.render('students', {
+                students:data
             })
-            .catch((err) => {
-                res.json({ message: "no results" });
-            });
+        }).catch((err) => {
+            res.json({ message: "no results" });
+        });
     } else {
-        //Getting all students
-        data.getAllStudents()
-            .then((data) => {
-                res.json(data);
-            })
-            .catch((err) => {
-                res.json({ message: "no results" });
+        data.getAllStudents().then((data) => {
+            res.render('students', {
+                students: data
             });
+            
+        }).catch((err) => {
+            res.render('students',{
+                message: "no results"
+            })
+            
+        });
     }
 });
 
@@ -122,11 +124,22 @@ app.get("/student/:studentNum", (req, res) => {
 });
 
 //Routing to get all courses
-app.get("/courses", (req, res) => {
-    data.getCourses()
-        .then((data) => {
-            res.json(data);
+app.get("/courses", (req,res) => {
+    data.getCourses().then((data)=>{
+        res.render('courses',{
+            courses: data
+        })
+    });
+});
+
+app.get("/course/:courseID",(req, res) =>{
+    
+    data.getcourseById(req.params.courseID).then((data) => {
+        res.render('course',{
+            course:data
         });
+        
+    });
 });
 
 //Handling 404 errors

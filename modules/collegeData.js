@@ -114,3 +114,21 @@ module.exports.addStudent = function(studentData){
      });
 }
 
+module.exports.getcourseById = function(id){
+    return new Promise(function (resolve, reject) {
+        var foundCourse = null;
+
+        for (let i = 0; i < dataCollection.courses.length; i++) {
+            if (dataCollection.courses[i].courseId == id) {
+                foundCourse = dataCollection.courses[i];
+            }
+        }
+
+        if (!foundCourse) {
+            reject("query returned 0 results"); return;
+        }
+
+        resolve(foundCourse);
+    });
+
+}
