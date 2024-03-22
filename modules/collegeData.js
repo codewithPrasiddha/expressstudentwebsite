@@ -132,3 +132,39 @@ module.exports.getcourseById = function(id){
     });
 
 }
+
+module.exports.updateStudent = function (studentData) {
+    return new Promise(function (resolve, reject) {
+        var findStudent = null;
+        for (let i = 0; i < dataCollection.students.length; i++) {
+            if (dataCollection.students[i].studentNum == studentData.studentNum) {
+                findStudent = dataCollection.students[i];
+            }
+        }
+        if (findStudent) {
+            findStudent.firstName = studentData.firstName;
+            findStudent.lastName = studentData.lastName,
+                findStudent.email = studentData.email,
+                findStudent.addressStreet = studentData.addressStreet,
+                findStudent.addressCity = studentData.addressCity,
+                findStudent.addressProvince = studentData.addressProvince,
+                findStudent.TA = studentData.TA,
+                findStudent.status = studentData.status,
+                findStudent.course = studentData.course
+            console.log(dataCollection.students);
+            fs.writeFile('./data/students.json', JSON.stringify(dataCollection.students), 'utf8', function (err) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve();
+                }
+            });
+            resolve();
+        } else {
+
+            reject("query returned 0 results");
+            return;
+        }
+
+    });
+};

@@ -4,9 +4,9 @@
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 20th March, 2024
+*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 22nd March, 2024
 *
-*  Online (Cycliic) Link: https://zany-puce-chicken-wig.cyclic.app/
+*  Online (Cycliic) Link: https://panicky-lamb-nightgown.cyclic.app
 *
 ********************************************************************************/ 
 const express = require("express");
@@ -114,13 +114,19 @@ app.get("/students", (req, res) => {
 
 //Routing to get a single student by student number
 app.get("/student/:studentNum", (req, res) => {
-    data.getStudentByNum(req.params.studentNum)
-        .then((data) => {
-            res.json(data);
-        })
-        .catch((err) => {
-            res.json({ message: "no results" });
+    data.getStudentByNum(req.params.studentNum).then((data) => {
+        res.render("student", {
+            student:data
         });
+    }).catch((err) => {
+        res.json({message:"no results"});
+    });
+});
+
+app.post("/student/update", (req, res) => {
+    console.log(req.body);
+    data.updateStudent(req.body);
+    res.redirect("/students");
 });
 
 //Routing to get all courses
