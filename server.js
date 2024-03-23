@@ -153,6 +153,7 @@ app.use((req, res) => {
     res.status(404).send("Page Not Found");
 });
 
+
 //Initializing the data module and starting the server
 data.initialize()
     .then(() => {
