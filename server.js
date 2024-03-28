@@ -15,6 +15,28 @@ const exphbs = require('express-handlebars');
 
 const path = require("path");
 
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize('SenecaDB', 'SenecaDB_owner', 'G3PsQmfz4oBv', {
+    host: 'ep-dawn-star-a57qi3gz-pooler.us-east-2.aws.neon.tech',
+    dialect: 'postgres',
+    port: 5432,
+    dialectOptions: {
+        ssl: { rejectUnauthorized: false }
+    }, 
+    query:{ raw: true }
+});
+
+// Authenticate the connection
+sequelize
+    .authenticate()
+    .then(function() {
+        console.log('Connection has been established successfully.');
+    })
+    .catch(function(err) {
+        console.log('Unable to connect to the database:', err);
+    });
+
 //Importing the module for college data
 const data = require("./modules/collegeData.js");
 
