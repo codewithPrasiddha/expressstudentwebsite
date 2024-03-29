@@ -206,3 +206,63 @@ module.exports.updateStudent = function (studentData) {
     });
 };
 
+module.exports.addCourse = function (courseData) {
+    courseData.courseCode = courseData.courseCode || null;
+    courseData.courseDescription = courseData.courseDescription || null;
+
+    return new Promise((resolve, reject) => {
+        Course.create(courseData)
+            .then(() => {
+                console.log("Course created successfully.");
+                resolve();
+            })
+            .catch((error) => {
+                console.error("Error creating course:", error);
+                reject("Unable to create course");
+            });
+    });
+};
+
+module.exports.updateCourse = function (courseData) {
+    courseData.courseCode = courseData.courseCode || null;
+    courseData.courseDescription = courseData.courseDescription || null;
+
+    return new Promise((resolve, reject) => {
+        Course.update(courseData, {
+            where: {
+                courseId: courseData.courseId,
+            },
+        })
+            .then(() => {
+                console.log("Course updated successfully.");
+                resolve();
+            })
+            .catch((error) => {
+                console.error("Error updating course:", error);
+                reject("Unable to update course");
+            });
+    });
+};
+
+module.exports.deleteCourseById = function (id) {
+    return new Promise((resolve, reject) => {
+        Course.destroy({
+            where: {
+                courseId: id,
+            },
+        })
+            .then((rowsDeleted) => {
+                if (rowsDeleted > 0) {
+                    console.log(`Course with ID ${id} deleted successfully.`);
+                    resolve();
+                } else {
+                    reject(`Course with ID ${id} not found`);
+                }
+            })
+            .catch((error) => {
+                console.error("Error deleting course:", error);
+                reject("Unable to delete course");
+            });
+    });
+};
+
