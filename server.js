@@ -1,10 +1,10 @@
 /*********************************************************************************
-*  WEB700 – Assignment 05
+*  WEB700 – Assignment 06
 *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
-*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 24th March, 2024
+*  Name: Prasiddha Thapaliya Student ID:121569230 Date: 29th March, 2024
 *
 *  Online (Cycliic) Link: https://panicky-lamb-nightgown.cyclic.app
 *
@@ -189,6 +189,21 @@ app.get("/courses", (req, res) => {
         })
         .catch((error) => {
             res.render("courses", { message: "Error retrieving data" });
+        });
+});
+
+app.get("/courses/add", (req, res) => {
+    res.render("addCourse");
+  });
+
+app.post("/courses/add", (req, res) => {
+    data
+        .addCourse(req.body)
+        .then(() => {
+            res.redirect("/courses");
+        })
+        .catch((error) => {
+            res.status(500).send("Error adding student: " + error.message);
         });
 });
 
