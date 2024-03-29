@@ -1,7 +1,9 @@
 <div class="row">
     <div class="col-md-12 table-responsive">
         <br>
-        <h2>Students</h2>
+        <h2>Students
+            <a href="/students/add" class="btn btn-success float-end">Add New Student</a>
+        </h2>
         <hr />
         {{#if students}}
         <table class="table-responsive">
@@ -13,6 +15,7 @@
                     <th>Address</th>
                     <th>Status</th>
                     <th>Course ID</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -24,12 +27,15 @@
                     <td>{{addressStreet}}</td>
                     <td>{{status}}</td>
                     <td><a href="/students?course={{course}}">{{course}}</a></td>
+                    <td>
+                        <a href="/students/delete/{{studentNum}}" class="btn btn-danger">Remove</a>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
         {{#each students}}
-        
+
         {{/each}}
         {{else}}
         <p>{{message}}</p>

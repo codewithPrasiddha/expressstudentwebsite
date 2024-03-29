@@ -266,3 +266,20 @@ module.exports.deleteCourseById = function (id) {
     });
 };
 
+module.exports.deleteStudentByNum=function(studentNum) {
+    return new Promise((resolve, reject) => {
+      Student.destroy({
+        where: { studentNum: studentNum }
+      })
+      .then((rowsDeleted) => {
+        if (rowsDeleted === 0) {
+          reject({ message: "Student not found" });
+        } else {
+          resolve();
+        }
+      })
+      .catch((error) => {
+        reject(error);
+      });
+    });
+  }
