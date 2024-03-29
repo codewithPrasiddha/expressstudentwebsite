@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 html, body {
-    background: linear-gradient(to bottom, #3498db, #8e44ad);
+    background:#DCDCDC; 
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -15,52 +15,57 @@ html, body {
 
 .navbar-brand {
     font-family: 'Courgette', cursive;
-    color: #000000;
+    color: #333333;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
-    color: #000000;
+    color: #333333;
 }
 
 .nav-link:hover {
-    color: #000000;
+    color: #333333;
     font-weight: bold;
 }
 
 tr:nth-child(odd) td {
     background-color: #ffffff;
-    color: #000000;
+    color: #333333;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Courgette', cursive;
-    color: #000000;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Georgia';
+    color: #333333;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 a {
-    color: #000000;
+    color: #333333;
 }
 
 a:hover {
-    color: #000000;
+    color: #333333;
 }
 
 legend {
     padding: 10px 0;
     font-family: 'Nunito Sans', sans-serif;
-    color: #000000;
+    color: #333333;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
-    background-color: #27ae60;
+    background-color: #999999;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
+    background-color: #777777;
 }
 
 /* Table styling */
@@ -76,12 +81,12 @@ table caption {
 }
 
 table th {
-    background-color: #f0f0f0;
+    background-color: #dddddd;
     padding: 8px;
 }
 
 table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
 }
 
 table tr:nth-child(odd) {
@@ -98,7 +103,7 @@ section {
 }
 
 h2 {
-    color: #000000;
+    color: #333333;
     font-size: 24px;
 }
 
@@ -106,7 +111,7 @@ ol {
     margin-bottom: 20px;
 }
 
-ol > li {
+ol>li {
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -117,10 +122,10 @@ ul {
     margin-bottom: 10px;
 }
 
-ul > li {
-    color: #000000;
+ul>li {
+    color: #333333;
 }
 
 p {
-    color: #000000;
+    color: #333333;
 }
